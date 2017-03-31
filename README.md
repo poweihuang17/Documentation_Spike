@@ -5,8 +5,8 @@ Contributor: Po-wei Huang
 
 Tutorial on Spike Internal
 ==================
-*   Prerequisite[#pre]
-*   Top Level View[#Top]
+*   [Prerequisite](#pre)
+*   [Top Level View](#Top)
     *   [What they model?](#model_top)
     *   [Spike's source code](#source_top)
 *   Memory System Overview
@@ -36,4 +36,4 @@ Tutorial on Spike Internal
 <h3 id="modtopel_">What they model?</h3>
   For spike, they use a multi-core framework. Each core includes a MMU for virtual memory, and all of the core have a common I$ and D$. Then, both I$ and D$ connect to a single L2$. The main memory follows. 
   The cores and the memory hierarchy are inside a class sim, and the class could interact with outside by interactive command. Moreover, the sim includes  bus, debug module, boot rom, and real time clock (RTC) . The processors, boot ROM, debug module and RTC are hooked on the bus, but the memory is not. These components together enable spike to run a simple proxy kernel pk.
-
+![Top level overview](pictures/Sim.png)
