@@ -18,18 +18,18 @@ Tutorial on Spike Internal
     *   [Result of cache simulation](#Result of cache)
 *   [Processor Overview](#Processor)
     *   [What to model?](#model_processor)
-*   Hart modeling
+*   [Hart modeling](#hart)
     *   [What to model](#model_hart)
     *   [Spike's implementation](#source_hart)
-*   Trap modeling
+*   [Trap modeling](#trap)
     *   [What to model](#model_trap)
     *   [Spike's implementation](#source_trap)
-*   Interrupt modeling
-*   Exception modeling
-*   Bus and Miscellaneous devices
-    *   [Device Simulation](#model_device)
-*   Appendix
-    *   [Dealing with Instructions](#instrunctions)
+*   [Interrupt modeling](#interrupt)
+*   [Exception modeling](#interrupt)
+*   [Bus and Miscellaneous devices](#bus)
+    *   [Device Simulation](#device_sim)
+*   [Appendix](#appendix)
+    *   [Dealing with Instructions](#Instruction)
 <h2 id="pre">Prerequisite</h2>
 	Doxygen for large scale C++ program tracing 
 	Moreover, this tutorial is for branch debug-0.13, but most of them should be the same.
