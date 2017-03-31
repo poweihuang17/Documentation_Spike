@@ -79,7 +79,7 @@ To understand how the cache is accessed, we could see riscv-isa-sim/riscv/caches
 ![cache access](./pictures/Cache_code.png)<br/>
 <h3 id="Result of cache">Result of Cache simulation</h3>
 The picture below is a result of cache simulation. It could show read/write miss for I$, D$ and 
-L2. Though it’s not accurate, it could provide a basic analysis.
+L2. Though it’s not accurate, it could provide a basic analysis.<br/>
 ![result_cache](./pictures/Cache_miss.png)<br/>
 <h2 id="Processor">Processor_Overview</h2>
 <h3 id="model_processor">What to model?</h3>
@@ -92,20 +92,20 @@ Basically, to model a processor, we need the following:<br/>
 <h3 id="model_hart">What to model?</h3>
 * Architecture state of a hart, including CSR, pc, registers and floating point registers.
 <h3 id="source_hart">Spike’s implementation</h3>
-Below is an excerpt from spike/riscv/processor.c. The state_t contains pc, register_file, and CSR. Notice that Spike only implement some of the CSR inside the hart. It implements other CSR in the processor.
+Below is an excerpt from spike/riscv/processor.c. The state_t contains pc, register_file, and CSR. Notice that Spike only implement some of the CSR inside the hart. It implements other CSR in the processor.<br/>
 ![Hart](./pictures/hart_spike.png)<br/>
 <h2 id="trap">Trap modeling</h2>
 <h3 id="model_trap">What to model?</h3>
-To model a trap, the followings are needed:
-* Cause of the trap. The information is in mcause ( machine cause register)
-* For memory related trap, the faulting address needs to be saved in mbadaddr (machine bad address register).
-* For trap caused by exception, virtual address of the instruction that encountered the exception. It’s in mepc(machine exception pc register).
-* For trap caused by interrup?
+To model a trap, the followings are needed:<br/>
+* Cause of the trap. The information is in mcause ( machine cause register)<br/>
+* For memory related trap, the faulting address needs to be saved in mbadaddr (machine bad address register).<br/>
+* For trap caused by exception, virtual address of the instruction that encountered the exception. It’s in mepc(machine exception pc register).<br/>
+* For trap caused by interrup?<br/>
 <h3 id="source_trap">What to model?</h3>
-Inside encoding.h, the causes are defined.
+Inside encoding.h, the causes are defined.<br/>
 ![trap_code](./pictures/trap.png)<br/>
 ![trap_spec](./pictures/trap_spec.png)<br/>
-Inside trap.h , two base classes are defined. The which and badaddr are for the cause and faulting address respectively. Then, macros are used to construct classes for each kind of trap and the cause are saved into the class at the same time.
+Inside trap.h , two base classes are defined. The which and badaddr are for the cause and faulting address respectively. Then, macros are used to construct classes for each kind of trap and the cause are saved into the class at the same time.<br/>
 ![trap_class](./pictures/trap_class.png)<br/>
 ![trap_define](./pictures/trap_define_class.png)<br/>
 Then, how about epc? (Todo)<br/>
@@ -126,3 +126,4 @@ In spike, five devices are simulated, including bus, rom, real time clock (rtc),
 Related file: 
 * riscv/decode.h
 The spike use a class instruction_t to represent instructions. To extract each field, it defines functions like rs1() or rm(), as the following code shows.
+![trap_spec](./pictures/trap_spec.png)<br/>
