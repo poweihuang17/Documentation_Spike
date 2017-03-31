@@ -102,7 +102,7 @@ To model a trap, the followings are needed:<br/>
 * Cause of the trap. The information is in mcause ( machine cause register)<br/>
 * For memory related trap, the faulting address needs to be saved in mbadaddr (machine bad address register).<br/>
 * For trap caused by exception, virtual address of the instruction that encountered the exception. It’s in mepc(machine exception pc register).<br/>
-* For trap caused by interrup?<br/>
+* For trap caused by interrupt?<br/>
 <h3 id="source_trap">What to model?</h3>
 Inside encoding.h, the causes are defined.  
 
@@ -130,8 +130,10 @@ In this section, we want to describe how to simulate or add a device. The device
 In spike, five devices are simulated, including bus, rom, real time clock (rtc), processor and debug module.
 <h2 id="appendix">Appendix</h2>
 <h3 id="Instruction">Dealing with Instructions</h3>
-Related file: 
-* riscv/decode.h
+Related file: <br/>
+* riscv/decode.h<br/>
 The spike use a class instruction_t to represent instructions. To extract each field, it defines functions like rs1() or rm(), as the following code shows.  
 
-![trap_spec](./pictures/trap_spec.png)<br/>
+![instruction](./pictures/instruction.png)<br/>
+The number of x comes from the following encoding table from the spec.
+![instruction_spec](./pictures/instruction_spec.png)<br/>
