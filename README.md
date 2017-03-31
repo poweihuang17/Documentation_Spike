@@ -42,12 +42,15 @@ The cores and the memory hierarchy are inside a class sim, and the class could i
 ![Top level overview](./pictures/Sim.png)  
 <h3 id="source_top">Spike's source code</h3>
 	The code below comes from riscv-isa-sim/spike_main/spike.cc. You could see that I$ and D$ connect to L2$ by miss handler. Moreover, for each core, it has a mmu and the mmu connect to a single ic and dc.  
-After all the components are connected, the method run is called to start the simulation.
+After all the components are connected, the method run is called to start the simulation.  
+
 ![Source of Top](./pictures/Spike_main.tiff)  
-	On the other hand, inside riscv-isa-sim/riscv/sim.cc, you could see many bus.add_device(), just like the following figure shows. Spike use this function to attach device on bus. After these attachments are done, spike could start to run.
+	On the other hand, inside riscv-isa-sim/riscv/sim.cc, you could see many bus.add_device(), just like the following figure shows. Spike use this function to attach device on bus. After these attachments are done, spike could start to run.  
+	
 ![Source of Bus add](./pictures/Bus_Add_device.tiff)
 <h2 id="Memory">Memory system overview</h2>
-<h3 id="model_memory">What they model?</h3>
+<h3 id="model_memory">What they model?</h3>  
+
 ![Memory system overview](./pictures/Memory_system.png)  
 	The picture above is an overview of the memory system. The MMU contains a TLB, which could send back the data without invocation of cache. If the TLB fail, they will go through the table and access the cache. For cache, they model a write-back cache, and use sets/ways/line size to set the configuration. This scheme actually will make cache simulation inaccurate, but they do this in order to speed up performance of simulator.
 <h2 id="MMU_TLB">TLB & MMU</h2>
