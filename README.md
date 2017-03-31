@@ -58,7 +58,7 @@ The picture above is an overview of the memory system. The MMU contains a TLB, w
 
 <h2 id="MMU_TLB">TLB & MMU</h2>
 <h3 id="source_mmu">Spike's source code</h3>
-When an instruction execute a load, it will call load function of MMU and use WRITE_RD to write the data back t register. Then, how to implement the MMU load?  
+When an instruction execute a load, it will call load function of MMU and use WRITE_RD to write the data back t register. Then, how to implement the MMU load?<br/>  
 <br/>
   
 ![Instruction load](./pictures/Instruction_MMU.png)  
