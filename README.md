@@ -1,5 +1,5 @@
 # Tutuorial on Spike 
-==================
+
 
 Contributor: Po-wei Huang
 
