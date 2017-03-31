@@ -85,15 +85,16 @@ L2. Though it’s not accurate, it could provide a basic analysis.
 <h2 id="Processor">Processor_Overview</h2>
 <h3 id="model_processor">What to model?</h3>
 Basically, to model a processor, we need the following:<br/>
-* Model a RISC-V hart
-* Processor stepping, including fetch and execution.
-* Trap Handling including exception and interrupt handling.
-* Optional: MMU for VA->PA
+* Model a RISC-V hart  <br/>
+* Processor stepping, including fetch and execution.<br/>
+* Trap Handling including exception and interrupt handling.<br/>
+* Optional: MMU for VA->PA<br/>
 <h2 id="hart">Hart modeling</h2>
 <h3 id="model_hart">What to model?</h3>
 * Architecture state of a hart, including CSR, pc, registers and floating point registers.
 <h3 id="source_hart">Spike’s implementation</h3>
-Below is an excerpt from spike/riscv/processor.c. The state_t contains pc, register_file, and CSR. Notice that Spike only implement some of the CSR inside the hart. It implements other CSR in the processor.<br/>
+Below is an excerpt from spike/riscv/processor.c. The state_t contains pc, register_file, and CSR. Notice that Spike only implement some of the CSR inside the hart. It implements other CSR in the processor.  
+
 ![Hart](./pictures/hart_spike.png)<br/>
 <h2 id="trap">Trap modeling</h2>
 <h3 id="model_trap">What to model?</h3>
@@ -103,11 +104,15 @@ To model a trap, the followings are needed:<br/>
 * For trap caused by exception, virtual address of the instruction that encountered the exception. It’s in mepc(machine exception pc register).<br/>
 * For trap caused by interrup?<br/>
 <h3 id="source_trap">What to model?</h3>
-Inside encoding.h, the causes are defined.<br/>
-![trap_code](./pictures/trap.png)<br/>
+Inside encoding.h, the causes are defined.  
+
+![trap_code](./pictures/trap.png)  
+
 ![trap_spec](./pictures/trap_spec.png)<br/>
-Inside trap.h , two base classes are defined. The which and badaddr are for the cause and faulting address respectively. Then, macros are used to construct classes for each kind of trap and the cause are saved into the class at the same time.<br/>
-![trap_class](./pictures/trap_class.png)<br/>
+Inside trap.h , two base classes are defined. The which and badaddr are for the cause and faulting address respectively. Then, macros are used to construct classes for each kind of trap and the cause are saved into the class at the same time.  
+
+![trap_class](./pictures/trap_class.png)  
+
 ![trap_define](./pictures/trap_define_class.png)<br/>
 Then, how about epc? (Todo)<br/>
 <h2 id="interrupt">Interrupt Modeling</h2>
@@ -119,12 +124,14 @@ Todo
 Related file:<br/>
 * riscv/device.h
 * riscv/device.cc
-In this section, we want to describe how to simulate or add a device. The devices inherit from a base class abstract_device_t, which has virtual functions load and store. Then, each device implements the load/store, and provides their special functions. 
+In this section, we want to describe how to simulate or add a device. The devices inherit from a base class abstract_device_t, which has virtual functions load and store. Then, each device implements the load/store, and provides their special functions.  
+
 ![device](./pictures/abstract_device_t.png)<br/>
 In spike, five devices are simulated, including bus, rom, real time clock (rtc), processor and debug module.
 <h2 id="appendix">Appendix</h2>
 <h3 id="Instruction">Dealing with Instructions</h3>
 Related file: 
 * riscv/decode.h
-The spike use a class instruction_t to represent instructions. To extract each field, it defines functions like rs1() or rm(), as the following code shows.
+The spike use a class instruction_t to represent instructions. To extract each field, it defines functions like rs1() or rm(), as the following code shows.  
+
 ![trap_spec](./pictures/trap_spec.png)<br/>
