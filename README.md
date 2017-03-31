@@ -15,7 +15,7 @@ Tutorial on Spike Internal
     *   [Spike's source code?](#source_MMU_TLB)
 *   [Cache simulation](#Cache_sim)
     *   [Spike's source code?](#source_cache)
-    *   [Result of cache simulation](#Result of cache)
+    *   [Result of cache simulation](#Result_of_cache)
 *   [Processor Overview](#Processor)
     *   [What to model?](#model_processor)
 *   [Hart modeling](#hart)
@@ -77,7 +77,7 @@ Then, when TLB fail, MMU will call the slow path, and it will ask tracer to call
 To understand how the cache is accessed, we could see riscv-isa-sim/riscv/cachesim.cc shown below. There are two functions, access and victimize. When tracer calls trace, the cache will call access.The access will check tag and then do the write or read. Moreover, it use lfsr to find the victim when a replacement happens.  
 
 ![cache access](./pictures/Cache_code.png)<br/>
-<h3 id="Result of cache">Result of Cache simulation</h3>
+<h3 id="Result_of_cache">Result of Cache simulation</h3>
 The picture below is a result of cache simulation. It could show read/write miss for I$, D$ and 
 L2. Though it’s not accurate, it could provide a basic analysis.  
 
@@ -122,8 +122,8 @@ Todo
 <h2 id="bus">Bus and Miscellaneous devices</h2>
 <h3 id="device_sim">Device simulation</h3>
 Related file:<br/>
-* riscv/device.h
-* riscv/device.cc
+* riscv/device.h<br/>
+* riscv/device.cc<br/>
 In this section, we want to describe how to simulate or add a device. The devices inherit from a base class abstract_device_t, which has virtual functions load and store. Then, each device implements the load/store, and provides their special functions.  
 
 ![device](./pictures/abstract_device_t.png)<br/>
