@@ -1,7 +1,7 @@
 # Tutuorial on Spike 
 
 
-Contributor: Po-wei Huang
+Documentation contributor: Po-wei Huang
 
 Tutorial on Spike Internal
 ==================
@@ -79,7 +79,8 @@ To understand how the cache is accessed, we could see riscv-isa-sim/riscv/caches
 ![cache access](./pictures/Cache_code.png)<br/>
 <h3 id="Result of cache">Result of Cache simulation</h3>
 The picture below is a result of cache simulation. It could show read/write miss for I$, D$ and 
-L2. Though it’s not accurate, it could provide a basic analysis.<br/>
+L2. Though it’s not accurate, it could provide a basic analysis.  
+
 ![result_cache](./pictures/Cache_miss.png)<br/>
 <h2 id="Processor">Processor_Overview</h2>
 <h3 id="model_processor">What to model?</h3>
