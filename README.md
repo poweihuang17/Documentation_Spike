@@ -31,8 +31,9 @@ Tutorial on Spike Internal
 *   [Appendix](#appendix)
     *   [Dealing with Instructions](#Instruction)
 <h2 id="pre">Prerequisite</h2>
-Doxygen for large scale C++ program tracing. <br/>
-Moreover, this tutorial is for branch debug-0.13, but most of them should be the same.<br/>
+This tutorial is for branch debug-0.13, but most of them should be the same.<br/>
+Moreover, Doxygen is used for large scale C++ program tracing in the tutorial. <br/>
+
 <h2 id="Top">Top Level View</h2>
 <h3 id="model_top">What they model?</h3>
 For spike, they use a multi-core framework. Each core includes a MMU for virtual memory, and all of the core have a common I$ and D$. Then, both I$ and D$ connect to a single L2$. The main memory follows.  
