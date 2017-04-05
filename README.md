@@ -119,7 +119,7 @@ To model a trap, the followings are needed:<br/>
 * For memory related trap, the faulting address needs to be saved in mbadaddr (machine bad address register).<br/>
 * For trap caused by exception, virtual address of the instruction that encountered the exception. It’s in mepc(machine exception pc register).<br/>
 * For trap caused by interrupt?<br/>
-<h3 id="source_trap">What does Spike try to model?</h3>
+<h3 id="source_trap">Spike's source code</h3>
 Inside encoding.h, the causes are defined.  
 
 ![trap_code](./pictures/trap.png)  
