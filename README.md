@@ -1,7 +1,7 @@
 # Tutuorial on Spike Internal
 
 
-Documentation contributor: Po-wei Huang 
+Documentation editor: Po-wei Huang 
 
 Acknowledgement
 ==================
@@ -13,7 +13,8 @@ Tutorial on Spike Internal
 ==================
 *   [Goal of this document](#goal)
 *   [Which branch is being tageted?](#target)
-*   [Top Level View](#Top)
+*   [Overview of Spike](#overview)
+*   [Top Level Structure](#Top)
     *   [What does Spike try to model?](#model_top)
     *   [Spike's source code](#source_top)
 *   [Memory System Overview](#Memory)
@@ -47,9 +48,12 @@ As Spike is a functional simulator, the simulator structure would not necessaril
 <h2 id="target">Which branch is being tageted?</h2>
 This tutorial is for branch master from the RISC-V ISA SIM repo and the commit is daaf28f7296c0a5f5c90fe6646a4f8a73a720af5.<br/>
 
+<h2 id="overview">Overview of Spike</h2>
+1. Spike is an ISS (instruction set simulator), which is not cycle accurate.
+2. Spike is a function simulator which omits all internal delays such as cache misses, memory transactions, IO accesses.
+3. Spike does not have a full cache model, instead, the cache is a tracer or monitor (It doesn't allocate a space to cache any data).
 
-
-<h2 id="Top">Top Level View</h2>
+<h2 id="Top">Top Level Structure</h2>
 <h3 id="model_top">What does Spike try to model?</h3>
 For spike, they use a multi-core framework. Each core includes a MMU for virtual memory, and all of the core have a common I$ and D$. Then, both I$ and D$ connect to a single L2$. The main memory follows.  
   
