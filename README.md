@@ -1,10 +1,17 @@
-# Tutuorial on Spike 
+# Tutuorial on Spike Internal
 
 
-Documentation contributor: Po-wei Huang
+Documentation contributor: Po-wei Huang 
+
+Acknowledgement
+==================
+I would like to thank the following people for their time, feedback, and contribution:
+Wei-Song
+
 
 Tutorial on Spike Internal
 ==================
+*   [Goal of this document](#goal)
 *   [Prerequisite](#pre)
 *   [Top Level View](#Top)
     *   [What they model?](#model_top)
@@ -30,6 +37,13 @@ Tutorial on Spike Internal
     *   [Device Simulation](#device_sim)
 *   [Appendix](#appendix)
     *   [Dealing with Instructions](#Instruction)
+<h2 id="goal">Goal of this document</h2>
+* Let people understand the implementation of Spike.
+* Work with Spike to help people understand RISC-V more as Spike is a golden reference
+* Provide information about how to use the spike, especially those features that are in the code but not well known to people. Ex. cache simulation, multi-core simulation.  
+<br/>
+As Spike is a functional simulator, the simulator structure would not necessarily match the hardware structure. In order to make simulation faster,  sometimes simulator optimization will be used, and these optimization will make the structure completely different. We will try to point out these difference when we meet them. <br/>
+
 <h2 id="pre">Prerequisite</h2>
 This tutorial is for branch debug-0.13, but most of them should be the same.<br/>
 Moreover, Doxygen is used for large scale C++ program tracing in the tutorial. <br/>
