@@ -14,22 +14,22 @@ Tutorial on Spike Internal
 *   [Goal of this document](#goal)
 *   [Which branch is being tageted?](#target)
 *   [Top Level View](#Top)
-    *   [What they model?](#model_top)
+    *   [What does Spike try to model?](#model_top)
     *   [Spike's source code](#source_top)
 *   [Memory System Overview](#Memory)
-    *   [What they model?](#model_memory)
+    *   [What does Spike try to model?](#model_memory)
 *   [TLB & MMU](#MMU_TLB)
     *   [Spike's source code?](#source_MMU_TLB)
 *   [Cache simulation](#Cache_sim)
     *   [Spike's source code?](#source_cache)
     *   [Result of cache simulation](#Result_of_cache)
 *   [Processor Overview](#Processor)
-    *   [What to model?](#model_processor)
+    *   [What does Spike try to model?](#model_processor)
 *   [Hart modeling](#hart)
-    *   [What to model](#model_hart)
+    *   [What does Spike try to model?](#model_hart)
     *   [Spike's implementation](#source_hart)
 *   [Trap modeling](#trap)
-    *   [What to model](#model_trap)
+    *   [What does Spike try to model?](#model_trap)
     *   [Spike's implementation](#source_trap)
 *   [Interrupt modeling](#interrupt)
 *   [Exception modeling](#interrupt)
@@ -50,7 +50,7 @@ This tutorial is for branch master from the RISC-V ISA SIM repo and the commit i
 
 
 <h2 id="Top">Top Level View</h2>
-<h3 id="model_top">What they model?</h3>
+<h3 id="model_top">What does Spike try to model?</h3>
 For spike, they use a multi-core framework. Each core includes a MMU for virtual memory, and all of the core have a common I$ and D$. Then, both I$ and D$ connect to a single L2$. The main memory follows.  
   
 
@@ -67,7 +67,7 @@ After all the components are connected, the method run is called to start the si
 ![Source of Bus add](./pictures/Bus_Add_device.png)  
 
 <h2 id="Memory">Memory system overview</h2>
-<h3 id="model_memory">What they model?</h3>  
+<h3 id="model_memory">What does Spike try to model?</h3>  
 
 ![Memory system overview](./pictures/Memory_system.png)  
 
@@ -99,27 +99,27 @@ L2. Though it’s not accurate, it could provide a basic analysis.
 
 ![result_cache](./pictures/Cache_miss.png)<br/>
 <h2 id="Processor">Processor_Overview</h2>
-<h3 id="model_processor">What to model?</h3>
+<h3 id="model_processor">What does Spike try to model?</h3>
 Basically, to model a processor, we need the following:<br/>
 * Model a RISC-V hart  <br/>
 * Processor stepping, including fetch and execution.<br/>
 * Trap Handling including exception and interrupt handling.<br/>
 * Optional: MMU for VA->PA<br/>
 <h2 id="hart">Hart modeling</h2>
-<h3 id="model_hart">What to model?</h3>
+<h3 id="model_hart">What does Spike try to model?</h3>
 * Architecture state of a hart, including CSR, pc, registers and floating point registers.
 <h3 id="source_hart">Spike’s implementation</h3>
 Below is an excerpt from spike/riscv/processor.c. The state_t contains pc, register_file, and CSR. Notice that Spike only implement some of the CSR inside the hart. It implements other CSR in the processor.  
 
 ![Hart](./pictures/hart_spike.png)<br/>
 <h2 id="trap">Trap modeling</h2>
-<h3 id="model_trap">What to model?</h3>
+<h3 id="model_trap">What does Spike try to model?</h3>
 To model a trap, the followings are needed:<br/>
 * Cause of the trap. The information is in mcause ( machine cause register)<br/>
 * For memory related trap, the faulting address needs to be saved in mbadaddr (machine bad address register).<br/>
 * For trap caused by exception, virtual address of the instruction that encountered the exception. It’s in mepc(machine exception pc register).<br/>
 * For trap caused by interrupt?<br/>
-<h3 id="source_trap">What to model?</h3>
+<h3 id="source_trap">What does Spike try to model?</h3>
 Inside encoding.h, the causes are defined.  
 
 ![trap_code](./pictures/trap.png)  
