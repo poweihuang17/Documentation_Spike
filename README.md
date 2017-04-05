@@ -12,7 +12,7 @@ Wei-Song
 Tutorial on Spike Internal
 ==================
 *   [Goal of this document](#goal)
-*   [Prerequisite](#pre)
+*   [Which branch is being tageted?](#target)
 *   [Top Level View](#Top)
     *   [What they model?](#model_top)
     *   [Spike's source code](#source_top)
@@ -44,9 +44,10 @@ Tutorial on Spike Internal
 <br/>
 As Spike is a functional simulator, the simulator structure would not necessarily match the hardware structure. In order to make simulation faster,  sometimes simulator optimization will be used, and these optimization will make the structure completely different. We will try to point out these difference when we meet them. <br/>
 
-<h2 id="pre">Prerequisite</h2>
-This tutorial is for branch debug-0.13, but most of them should be the same.<br/>
-Moreover, Doxygen is used for large scale C++ program tracing in the tutorial. <br/>
+<h2 id="target">Which branch is being tageted?</h2>
+This tutorial is for branch master from the RISC-V ISA SIM repo and the commit is daaf28f7296c0a5f5c90fe6646a4f8a73a720af5.<br/>
+
+
 
 <h2 id="Top">Top Level View</h2>
 <h3 id="model_top">What they model?</h3>
