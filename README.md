@@ -49,9 +49,9 @@ As Spike is a functional simulator, the simulator structure would not necessaril
 This tutorial is for branch master from the RISC-V ISA SIM repo and the commit is daaf28f7296c0a5f5c90fe6646a4f8a73a720af5.<br/>
 
 <h2 id="overview">Overview of Spike</h2>
-1. Spike is an ISS (instruction set simulator), which is not cycle accurate.
-2. Spike is a function simulator which omits all internal delays such as cache misses, memory transactions, IO accesses.
-3. Spike does not have a full cache model, instead, the cache is a tracer or monitor (It doesn't allocate a space to cache any data).
+1. Spike is an ISS (instruction set simulator), which is not cycle accurate. </br>
+2. Spike is a function simulator which omits all internal delays such as cache misses, memory transactions, IO accesses.</br>
+3. Spike does not have a full cache model, instead, the cache is a tracer or monitor (It doesn't allocate a space to cache any data). </br>
 
 <h2 id="Top">Top Level Structure</h2>
 <h3 id="model_top">What does Spike try to model?</h3>
