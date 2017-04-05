@@ -5,7 +5,7 @@ Documentation contributor: Po-wei Huang
 
 Acknowledgement
 ==================
-I would like to thank the following people for their time, feedback, and contribution:
+I would like to thank the following people for their time, feedback, and contribution:<br/>
 Wei-Song
 
 
@@ -38,9 +38,9 @@ Tutorial on Spike Internal
 *   [Appendix](#appendix)
     *   [Dealing with Instructions](#Instruction)
 <h2 id="goal">Goal of this document</h2>
-* Let people understand the implementation of Spike.
-* Work with Spike to help people understand RISC-V more as Spike is a golden reference
-* Provide information about how to use the spike, especially those features that are in the code but not well known to people. Ex. cache simulation, multi-core simulation.  
+* Let people understand the implementation of Spike.<br/>
+* Work with Spike to help people understand RISC-V more as Spike is a golden reference<br/>
+* Provide information about how to use the spike, especially those features that are in the code but not well known to people. Ex. cache simulation, multi-core simulation.  <br/>
 <br/>
 As Spike is a functional simulator, the simulator structure would not necessarily match the hardware structure. In order to make simulation faster,  sometimes simulator optimization will be used, and these optimization will make the structure completely different. We will try to point out these difference when we meet them. <br/>
 
