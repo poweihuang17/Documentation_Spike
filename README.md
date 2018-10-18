@@ -1,4 +1,4 @@
-# Tutuorial on Spike Internal
+# Tutorial on Spike Internal
 
 
 Documentation editor: Po-wei Huang 
@@ -45,9 +45,9 @@ Goal of this document
 * Work with Spike to help people understand RISC-V more as Spike is a golden reference
 * Provide information about how to use the spike, especially those features that are in the code but not well known to people. Ex. cache simulation, multi-core simulation.
 
-As Spike is a functional simulator, the simulator structure would not necessarily match the hardware structure. In order to make simulation faster, sometimes simulator optimization will be used, and these optimization will make the structure completely different. We will try to point out these difference when we meet them.
+As Spike is a functional simulator, the simulator structure would not necessarily match the hardware structure. In order to make simulation faster, sometimes simulator optimization will be used, and these optimization will make the structure completely different. We will try to point out these differences when we meet them.
 
-Which branch is being tageted?
+Which branch is being targeted?
 -----------------
 
 This tutorial is for branch master from the RISC-V ISA SIM repo and the commit is [daaf28f](https://github.com/riscv/riscv-isa-sim/tree/daaf28f7296c0a5f5c90fe6646a4f8a73a720af5).
